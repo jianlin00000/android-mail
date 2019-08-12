@@ -19,3 +19,10 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+-keep class javax.mail.**{*;}
+-keep class javax.mail.internet.**{*;}
+-keep class com.sun.activation.registries.**{*;}
+-keep class javax.activation.**{*;}
+-keep class myjava.awt.datatransfer.**{*;}
+-keep class org.apache.harmony.**{*;}
+-keep class com.sun.mail.**{*;}

@@ -48,24 +48,36 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void senTextMail(View view) {
-        MailInfo mailInfo = getMailInfo("测试", "哈哈");
-        try {
-            SendMailUtil.send(mailInfo);
-            Toast.makeText(MainActivity.this, "邮件已发送", Toast.LENGTH_SHORT).show();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                MailInfo mailInfo = getMailInfo("测试", "哈哈");
+                try {
+                    SendMailUtil.send(mailInfo);
+                    Toast.makeText(MainActivity.this, "邮件已发送", Toast.LENGTH_SHORT).show();
+                } catch (MessagingException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
+
     }
 
     public void sendFileMail(View view) {
-        String path = Environment.getExternalStorageDirectory() + File.separator + "test.ts";
-        File file = new File(path);
-        try {
-            SendMailUtil.send(file, getMailInfo("测试", "文件测试"));
-            Toast.makeText(MainActivity.this, "邮件已发送", Toast.LENGTH_SHORT).show();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String path = Environment.getExternalStorageDirectory() + File.separator + "test.ts";
+                File file = new File(path);
+                try {
+                    SendMailUtil.send(file, getMailInfo("测试", "文件测试"));
+                    Toast.makeText(MainActivity.this, "邮件已发送", Toast.LENGTH_SHORT).show();
+                } catch (MessagingException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
 }
