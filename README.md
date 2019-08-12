@@ -19,7 +19,7 @@ app下的build.gradle添加：
 
 ```css
 	dependencies {
-	        implementation 'com.github.jianlin00000:MailTest-master:Tag'
+	        implementation 'com.github.jianlin00000:MailTest-master:1.0.1'
 	}
 ```
 
