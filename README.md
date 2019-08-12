@@ -1,4 +1,4 @@
-# MailTest
+
 Android开发-在Android应用里实现自动发送邮件的功能
 
 ___
