@@ -62,8 +62,8 @@ ___
 
 ```
 -keep class javax.mail.**{*;}
--keep class javax.mail.internet.{*;}
--keep class com.sun.activation.registries.{*;}
+-keep class javax.mail.internet.**{*;}
+-keep class com.sun.activation.registries.**{*;}
 -keep class javax.activation.**{*;}
 -keep class myjava.awt.datatransfer.**{*;}
 -keep class org.apache.harmony.**{*;}
