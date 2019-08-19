@@ -69,4 +69,17 @@ ___
 -keep class org.apache.harmony.**{*;}
 -keep class com.sun.mail.**{*;}
 ```
+注：入混淆出现"com.sun.mail.handlers.handler_base: can't find referenced method 'boolean equals(java.awt.datatransfer.DataFlavor)' in program class javax.activation.ActivationDataFlavor"之类的错误，请尝试使用一下混淆规则：
 
+```
+-dontshrink
+-keep class javax.** {*;}
+-keep class com.sun.** {*;}
+-keep class myjava.** {*;}
+-keep class org.apache.harmony.** {*;}
+-keep public class Mail {*;}
+-dontwarn java.awt.**
+-dontwarn java.beans.Beans
+-dontwarn javax.security.**
+-dontwarn javax.activation.**
+```
